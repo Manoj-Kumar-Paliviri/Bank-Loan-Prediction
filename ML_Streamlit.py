@@ -22,7 +22,7 @@ def run():
     gen = st.selectbox("Gender",gen_options, format_func=lambda x: gen_display[x])
 
     ## For Marital Status
-    mar_display = ('No','Yes')
+    mar_display = ('Unmarried','Married')
     mar_options = list(range(len(mar_display)))
     mar = st.selectbox("Marital Status", mar_options, format_func=lambda x: mar_display[x])
 
