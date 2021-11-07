@@ -5,7 +5,7 @@ import pickle
 model = pickle.load(open('Loan_Eligibility_Predictor.pkl','rb'))
 
 def run():
-    img1 = Image.open('bank_logo.jpg')
+    img1 = Image.open('bank_logo.JPG')
     img1 = img1.resize((156,145))
     st.image(img1,use_column_width=False)
     st.title("Bank Loan Prediction using Machine Learning")
