@@ -8,7 +8,7 @@ def run():
     img1 = Image.open('bank_logo.JPG')
     img1 = img1.resize((156,145))
     st.image(img1,use_column_width=False)
-    st.title("Bank Loan Prediction using Machine Learning")
+    st.title("Bank Loan Prediction")
 
     ## Account No
     account_no = st.text_input('Account number')
