@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import pickle
 
-model = pickle.load(open('./Model/Loan_Eligibility_Predictor.pkl','rb'))
+model = pickle.load(open('Loan_Eligibility_Predictor.pkl','rb'))
 
 def run():
     img1 = Image.open('bank_logo.jpg')
