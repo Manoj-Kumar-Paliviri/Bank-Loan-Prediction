@@ -1,10 +1,34 @@
 import streamlit as st
 from PIL import Image
 import pickle
+import base64
 
 model = pickle.load(open('Loan_Eligibility_Predictor.pkl','rb'))
 
 def run():
+    def set_bg_hack(main_bg):
+        '''
+        A function to unpack an image from root folder and set as bg.
+        The bg will be static and won't take resolution of device into account.
+        Returns
+        -------
+        The background.
+        '''
+        # set bg name
+        main_bg_ext = "png"
+            
+        st.markdown(
+            f"""
+            <style>
+            .stApp {{
+                background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()});
+                background-size: cover
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
+    set_bg_hack('background.png')
     img1 = Image.open('bank_logo.JPG')
     img1 = img1.resize((156,145))
     st.image(img1,use_column_width=False)
